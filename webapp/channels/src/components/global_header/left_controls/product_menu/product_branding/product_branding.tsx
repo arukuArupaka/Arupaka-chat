@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import Heading from '@mattermost/compass-components/components/heading'; // eslint-disable-line no-restricted-imports
 import glyphMap, {ProductChannelsIcon} from '@mattermost/compass-icons/components';
 
+import ArupakaIcon from 'images/arupaka_icon.png';
 import {useCurrentProduct} from 'utils/products';
 
 const ProductBrandingContainer = styled.span`
@@ -34,7 +35,12 @@ const ProductBranding = (): JSX.Element => {
 
     return (
         <ProductBrandingContainer tabIndex={-1}>
-            <Icon size={24}/>
+            {/* <Icon size={24}/> */}
+            <img
+                src={ArupakaIcon}
+                alt='Arupaka Icon'
+                style={{width: '30px', height: '30px', borderRadius: '50%'}}
+            />
 
             {/* Heading for screen readers since an h1 shouldn't be inside a button */}
             <Heading
@@ -47,7 +53,9 @@ const ProductBranding = (): JSX.Element => {
             </Heading>
 
             <ProductBrandingHeading>
-                {currentProduct ? currentProduct.switcherText : 'Channels'}
+                <div>
+                    走るアルパカ-チャット
+                </div>
             </ProductBrandingHeading>
         </ProductBrandingContainer>
     );
